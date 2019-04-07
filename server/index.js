@@ -15,6 +15,12 @@ app
 	server.use('/api', appRoutes);
  
 
+server.get('/posts/:slug', (req, res) => { 
+  let actualPage = '/post';
+  let queryParams = { title: req.params.title }
+  app.render(req, res, actualPage, queryParams)
+})
+
   server.get('/g', (req, res) => {
     return res.end('sfdasd')
   })
